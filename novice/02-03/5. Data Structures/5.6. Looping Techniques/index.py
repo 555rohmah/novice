@@ -1,9 +1,9 @@
 knights = {'gallahad': 'the pure', 'robin': 'the brave'}
 for k, v in knights.items():
-print(k, v)
-for i, v in enumerate(['tic', 'tac', 'toe']):
+    print(k, v)
+for i, v in enumerate(['tic', 'tac', 'toe']): 
     print(i, v)
- questions = ['name', 'quest', 'favorite color']
+questions = ['name', 'quest', 'favorite color']
 answers = ['lancelot', 'the holy grail', 'blue']
 for q, a in zip(questions, answers):
     print('What is your {0}?  It is {1}.'.format(q, a))
@@ -21,4 +21,4 @@ filtered_data = []
 for value in raw_data:  
     if not math.isnan(value):
         filtered_data.append(value)
-filtered_data          
+print(filtered_data)          
