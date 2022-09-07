@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Menu PPQS</title>
+
+    <style>
+        table, th, td {
+            border:1px solid pink;
+        }
+        </style>
+
+    </div>
+        <h1>masukan daftar menu</h1>
+        <form action="" method="post">
+            <label for="">Hari :</label>
+            <input name="hari" type= "text">
+            <label for="">Sayur :</label>
+            <input name="sayur" type= "text">
+            <label for="">Lauk :</label>
+            <input name="lauk" type= "text">
+            <label for="">Buah :</label>
+            <input name="buah" type= "text">
+            <button type="submit">kirim</button>
+        </form>
+
+
+        <hr>
+        <h1>Ini Daftar Menu PPQS</h1>
+        <br>
+        <table style="width: 500px;">
+        <tr>
+                <th>id</th>
+                <th>hari</th>
+                <th>sayur</th>
+                <th>lauk</th>
+                <th>buah</th>
+                <th>keterangan</th>
+                <!-- <th>detail</th> -->
+        </tr>
+
+           {% for d in context %}
+
+        <tr>
+           <td>{{loop.index}}</td>
+           <td>{{d[1]}}</td>
+           <td>{{d[2]}}</td>
+           <td>{{d[3]}}</td>
+           <td>{{d[4]}}</td>
+           <td>
+               <a href="/detail/{{d[0]}}">
+                   <button class="btn btn-info">detail</button>
+               </a>
+               <a href="/update/{{d[0]}}">
+                   <button class="btn btn-warning">update</button>
+               </a>
+               <a href="/delete/{{d[0]}}">
+                   <button class="btn btn-danger">delete</button>
+               </a>
+           </td>
+           <!-- <td>{{d[2]}}</td> -->
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+</body>
+</html>
